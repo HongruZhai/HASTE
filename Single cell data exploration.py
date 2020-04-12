@@ -23,6 +23,8 @@ endog = pd.DataFrame(df_variables.iloc[:, 0]).to_numpy()
 exog = pd.DataFrame(df_variables.iloc[:, 1:]).to_numpy()
 CanCorr(endog, exog, tolerance=1e-8, missing='none')
 
+#####look up on the textbook####
+
 
 
 
