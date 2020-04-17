@@ -36,9 +36,12 @@ exog = pd.DataFrame(df_variables.iloc[:, 10:28])
 cancorr(endog, exog)
 #####1st & 2nd & 3rd Canonical Correlations are 0.89133498, 0.41448753, 0.12295234
 
-CanCorr(endog, exog, tolerance=1e-8, missing='none')
-#Richard Johnson ch.10
+result = CanCorr(endog, exog, tolerance=1e-8, missing='none')
 
+#Richard Johnson ch.10
+test = result.corr_test
+test().stats
+test().stats_mv
 
 
 
