@@ -72,7 +72,7 @@ import statsmodels.regression.mixed_linear_model as smm
 import statsmodels.regression.mixed_linear_model as smm
 Mixed_model = smm.MixedLM(endog=df_mix['GFP intens Mean'].to_numpy(), exog=df_mix['Nuc intens Mean'].to_numpy(), groups=df_mix['LNP dose'], missing='drop')
 result_lmm = Mixed_model.fit
-result_lmm.summary()
+#result_lmm.summary()
 
 
 
