@@ -10,9 +10,16 @@ from statsmodels.multivariate.pca import PCA
 from statsmodels.multivariate.multivariate_ols import _MultivariateOLS
 
 dat = pd.read_excel('C:/Users/ll/Desktop/HASTE/Single cell morphology data/Single cell morphology data/cell by cell data from 9 wells and 2 sites per well one sheet.xlsx', 'Sheet1', index_col=None)
+dat.replace({'A': 1, 'B': 0}, inplace=True)
+
+#####data with high/midium/low LNP dose for mixed effects model
+df_mix = dat.drop(dat.columns[1:10], axis = 1)
+df_mix = df_mix.loc[:, df_mix.columns != 'Cells no border - Nuc texture/symmetry Profile 3/5 SER-Saddle']
+df_mix = df_mix.rename(columns={"Cells no border - GFP intens Mean": "GFP intens Mean", "Cells no border - Nuc intens Mean": "Nuc intens Mean"})
+
 
 #####First exploration:  on High Dose LNP r5c6 datapoints, 200 variables v.s. GFP intensity
-dat.replace({'A': 1, 'B': 0}, inplace=True)
+
 df = dat.loc[dat['LNP dose'] == 'high', :]
 df_variables = df.iloc[:, 10:]
 df_variables = df_variables.loc[:, df_variables.columns != 'Cells no border - Nuc texture/symmetry Profile 3/5 SER-Saddle']
@@ -59,7 +66,13 @@ result_pca.plot_scree()
 
 
 ######Here starts the question2: Does internuclear distance correlate with GFP expression?(nuc intens mean/compactness v.s. GFP intens)
-
+# import statsmodels.formula.api as smf
+# mixed_model = smf.mixedlm("'GFP intens Mean' ~ 'Nuc intens Mean'", df_mix, groups=df_mix["LNP dose"])
+import statsmodels.regression.mixed_linear_model as smm
+import statsmodels.regression.mixed_linear_model as smm
+Mixed_model = smm.MixedLM(endog=df_mix['GFP intens Mean'].to_numpy(), exog=df_mix['Nuc intens Mean'].to_numpy(), groups=df_mix['LNP dose'], missing='drop')
+result_lmm = Mixed_model.fit
+result_lmm.summary()
 
 
 
