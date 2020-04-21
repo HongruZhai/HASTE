@@ -70,9 +70,9 @@ result_pca.plot_scree()
 # mixed_model = smf.mixedlm("'GFP intens Mean' ~ 'Nuc intens Mean'", df_mix, groups=df_mix["LNP dose"])
 import statsmodels.regression.mixed_linear_model as smm
 import statsmodels.regression.mixed_linear_model as smm
-Mixed_model = smm.MixedLM(endog=df_mix['GFP intens Mean'].to_numpy(), exog=df_mix['Nuc intens Mean'].to_numpy(), groups=df_mix['LNP dose'], missing='drop')
-result_lmm = Mixed_model.fit
-#result_lmm.summary()
+Mixed_model = smm.MixedLM(endog=df_mix['GFP intens Mean'].to_numpy(), exog=df_mix['Nuc intens Mean'].to_numpy(), groups=df_mix['LNP dose'], missing='drop') #the model
+result_lmm = Mixed_model.fit() 
+result_lmm.summary()
 
 
 
