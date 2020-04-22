@@ -56,9 +56,15 @@ test().stats_mv
 result_pca = PCA(df_variables, standardize=False, demean=True, missing='drop-row')
 result_pca.plot_scree()
 
+
+
+
+
+
+
 #Question1: identify variables that correlate with GFP expression
 #####Multivariate Linear Regression Model, selection of predictor variables see p.385 R.Johnson
-
+#GFP intens mean can be seen as count variable, that can be modeled using possion/negbino link in GLM.
 
 
 ##[Linear mixed effects model] can be performed for the effects of High/Midium/Low LNP dose
@@ -71,10 +77,17 @@ result_pca.plot_scree()
 import statsmodels.regression.mixed_linear_model as smm
 import statsmodels.regression.mixed_linear_model as smm
 Mixed_model = smm.MixedLM(endog=df_mix['GFP intens Mean'].to_numpy(), exog=df_mix['Nuc intens Mean'].to_numpy(), groups=df_mix['LNP dose'], missing='drop') #the model
-result_lmm = Mixed_model.fit() 
+result_lmm = Mixed_model.fit()
 result_lmm.summary()
+#result_lmm.summary().as_latex()
 
-
+####With only distance variables
+df_mix_distance = df_mix.rename(columns={"Cells no border - Distance from GFP bright Mean":"Distance from GFP bright Mean", "Cells no border - Distance intens Mean": "Distance intens Mean"})
+df_mix_distance = df_mix_distance.loc[:, ['LNP dose', 'GFP intens Mean', 'Nuc intens Mean', 'Distance from GFP bright Mean', 'Distance intens Mean']]
+Mixed_model_distance = smm.MixedLM(endog=df_mix_distance['GFP intens Mean'].to_numpy(), exog=df_mix_distance.loc[:,['Nuc intens Mean', 'Distance from GFP bright Mean', 'Distance intens Mean']].to_numpy(), groups=df_mix_distance['LNP dose'], missing='drop')
+result_lmm_distance = Mixed_model_distance.fit()
+result_lmm_distance.summary()
+##GFP intens mean ~ 1 + Nuc intens mean + (1 | LNP dose), assume that the random effects structure: only vary intercepts bwtween groups, with same slope between LNP doses.
 
 
 
