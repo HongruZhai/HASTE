@@ -66,24 +66,42 @@ We also want to describe how exactly GFP expression is affected by certain varia
 
 ![Only intercept1](https://github.com/HongruZhai/HASTE/blob/master/MixedEffectsModel_groupedlines.png)
 ### Linear Mixed model with both random intercept and random slope
-results:
-plot:
+<p align="center">
+  <img src="https://github.com/HongruZhai/HASTE/blob/master/Results2.JPG" alt="drawing" width="500"/>
+</p>
+
 ![Both inter and slope1](https://github.com/HongruZhai/HASTE/blob/master/MixedEffectsModel_groupedlines2.png)
 ## Linear Mixed Models(GFP expression v.s. Nuclei intensity)
 *GFP expression against Nuclei Intensity for High/Medium/Low LNP doses:*
+
+
 ![GFP vs Nuc](https://github.com/HongruZhai/HASTE/blob/master/Nuc%20vs%20GFP%20points.png)
 ### Linear Mixed model with only random intercept
-results:
-Plot:
+
+<p align="center">
+  <img src="https://github.com/HongruZhai/HASTE/blob/master/Results3.png" alt="drawing" width="500"/>
+</p>
+
 ![intercept2](https://github.com/HongruZhai/HASTE/blob/master/Nuc%20vs%20GFP%20lines%20intercept%20only.png)
 ### Linear Mixed model with both random intercept and random slope
-results:
-Plot:
+
+<p align="center">
+  <img src="https://github.com/HongruZhai/HASTE/blob/master/Results4.png" alt="drawing" width="500"/>
+</p>
+
 ![both inter and slp2](https://github.com/HongruZhai/HASTE/blob/master/Nuc%20vs%20GFP%20with%20int%20and%20slope.png)
 
 ## More
 Now we know the effect of Nuc on GFP, but is there some variable significantly moderates the effect of Nuc on GFP?
 If the experiment is randomized, a causal interpretation is generally possible.
+
+<p align="center">
+  <img src="https://github.com/HongruZhai/HASTE/blob/master/Moderation.png" alt="drawing" width="500"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/HongruZhai/HASTE/blob/master/mediation.png" alt="drawing" width="500"/>
+</p>
 
 ## Conclusions
 The model results suggesting that there are random effects in the dataset. 
