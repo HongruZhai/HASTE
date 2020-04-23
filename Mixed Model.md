@@ -79,14 +79,14 @@ We also want to describe how exactly GFP expression is affected by certain varia
 ### Linear Mixed model with only random intercept
 
 <p align="center">
-  <img src="https://github.com/HongruZhai/HASTE/blob/master/Results3.png" alt="drawing" width="500"/>
+  <img src="https://github.com/HongruZhai/HASTE/blob/master/Result3.png" alt="drawing" width="500"/>
 </p>
 
 ![intercept2](https://github.com/HongruZhai/HASTE/blob/master/Nuc%20vs%20GFP%20lines%20intercept%20only.png)
 ### Linear Mixed model with both random intercept and random slope
 
 <p align="center">
-  <img src="https://github.com/HongruZhai/HASTE/blob/master/Results4.png" alt="drawing" width="500"/>
+  <img src="https://github.com/HongruZhai/HASTE/blob/master/Result4.png" alt="drawing" width="500"/>
 </p>
 
 ![both inter and slp2](https://github.com/HongruZhai/HASTE/blob/master/Nuc%20vs%20GFP%20with%20int%20and%20slope.png)
