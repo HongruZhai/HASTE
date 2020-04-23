@@ -35,6 +35,7 @@ The linear regression does not fit well at all, but in causal inference, model f
 ## Linear Mixed Models(GFP expression v.s. Distance from Bright GFP)
 *GFP expression against Distance from bright cell for High/Medium/Low LNP doses:*
 ![GFP vs Bright distance](https://github.com/HongruZhai/HASTE/blob/master/MixedEffectsModel_all.png)
+![Alan](https://github.com/HongruZhai/HASTE/blob/master/Alan%20slides.png)
 ### Linear Mixed Model with only random intercept
 results: ###only random intercept, GFP ~  DistanceGFPBright + ( 1 | LNP)
 
