@@ -58,10 +58,12 @@ We also want to describe how exactly GFP expression is affected by certain varia
 <a href="https://www.codecogs.com/eqnedit.php?latex=GFP&space;\sim&space;DistanceGFPBright&space;&plus;&space;(1&space;|&space;LNP)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?GFP&space;\sim&space;DistanceGFPBright&space;&plus;&space;(1&space;|&space;LNP)" title="GFP \sim DistanceGFPBright + (1 | LNP)" /></a>
 </p>
 By specifying the formula like above, we assume that the slopes for High/Medium/Low LNP dose are the same, only the intercepts are different across the 3 levels. It's basically allowing only the random intercept accounting for the whole random effect.
+
 The mixed model was fitted with R package `lme4` and Python Package `statsmodels`, they would give almost the same results.
 <p align="center">
   <img src="https://github.com/HongruZhai/HASTE/blob/master/Results1.JPG" alt="drawing" width="500"/>
 </p>
+
 The High LNP dose group has the highest intercept, expressing more GFP on average, but the fixed effect was estimated as 0.1655, disagreed with the effect from simple case regression model. 
 
 
@@ -78,6 +80,7 @@ Now we allow intercept and slope to account for random effect. We see the effect
 ![Both inter and slope1](https://github.com/HongruZhai/HASTE/blob/master/MixedEffectsModel_groupedlines2.png)
 ## Linear Mixed Models(GFP expression v.s. Nuclei intensity)
 *GFP expression against Nuclei Intensity for High/Medium/Low LNP doses:*
+
 By look, the cells with High LNP Dose generally have higher GFP expression. But what about the effect of nuclei intensity on GFP expression? 
 
 ![GFP vs Nuc](https://github.com/HongruZhai/HASTE/blob/master/Nuc%20vs%20GFP%20points.png)
@@ -85,6 +88,7 @@ By look, the cells with High LNP Dose generally have higher GFP expression. But 
 <p align="center">
   <a href="https://www.codecogs.com/eqnedit.php?latex=GFP&space;\sim&space;Nuc&space;&plus;&space;(&space;1&space;|&space;LNP)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?GFP&space;\sim&space;Nuc&space;&plus;&space;(&space;1&space;|&space;LNP)" title="GFP \sim Nuc + ( 1 | LNP)" /></a>
 </p>
+
 We fit the mixed model for Nuclei v.s. GFP the same way as previous models. First, we allow only random intercept, we effect was estimated at -0.05475, agreed with the result from linear regression.
 
 <p align="center">
@@ -107,8 +111,12 @@ Again, we allow both intercept and slope to vary for groups, the result showed a
 ![both inter and slp2](https://github.com/HongruZhai/HASTE/blob/master/Nuc%20vs%20GFP%20with%20int%20and%20slope.png)
 
 ## Moderation Model
-### (Does `Distance from GFP Bright` have a role in the effect of `Nuclei Intensity` on GFP expression?)
-Now we know the effect of Nuc on GFP from mixed model, but is there some variable significantly moderates the effect of Nuc on GFP? I would choose again the variable `Distance form GFP Bright cell` to exemplify the moderation model. You can always take other interesting variable to fit the model. 
+> Does `Distance from GFP Bright` have a role in the effect of `Nuclei Intensity` on GFP expression?
+
+
+Now we know the effect of Nuc on GFP from mixed model, but is there some variable significantly moderates the effect of Nuc on GFP? 
+
+I would choose again the variable `Distance form GFP Bright cell` to exemplify the moderation model. You can always take other interesting variable to fit the model. 
 
 
 
