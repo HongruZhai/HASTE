@@ -54,7 +54,10 @@ We also want to describe how exactly GFP expression is affected by certain varia
 ![GFP vs Bright distance](https://github.com/HongruZhai/HASTE/blob/master/MixedEffectsModel_all.png)
 ![Alan](https://github.com/HongruZhai/HASTE/blob/master/Alan%20slides.png)
 ### Linear Mixed Model with only random intercept
-results: ###only random intercept, GFP ~  DistanceGFPBright + ( 1 | LNP)
+<a href="https://www.codecogs.com/eqnedit.php?latex=GFP&space;\sim&space;DistanceGFPBright&space;&plus;&space;(1&space;|&space;LNP)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?GFP&space;\sim&space;DistanceGFPBright&space;&plus;&space;(1&space;|&space;LNP)" title="GFP \sim DistanceGFPBright + (1 | LNP)" /></a>
+
+
+
 
 ![Only intercept1](https://github.com/HongruZhai/HASTE/blob/master/MixedEffectsModel_groupedlines.png)
 ### Linear Mixed model with both random intercept and random slope
