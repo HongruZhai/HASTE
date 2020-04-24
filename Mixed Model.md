@@ -1,6 +1,6 @@
 # A Demo of Linear Mixed Effects Model with Single Cells Dataset
-Hongru Zhai,
-22/04/2020
+*Hongru Zhai,*
+*22/04/2020*
 ## Linear Mixed Effects Model Introduction
 Mixed models are applied when we want to decompose variation into levels, given grouping in the data. The core of mixed model is that it incorporates fixed and random effects. The difference between fixed and random effects is that a fixed effect is an effect that is constant for a given population, but a random effect is an effect that varies for a given population. In another word, fixed effect is the part of effect in common for all groups, random effects are the part of effect special or unique for each group.
 ## Single Cells Dataset & tasks of interest
